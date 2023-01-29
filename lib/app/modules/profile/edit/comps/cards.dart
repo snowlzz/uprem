@@ -136,3 +136,43 @@ class _KidCardState extends State<KidCard> {
   }
 }
 
+class MomCard extends StatefulWidget {
+  const MomCard({super.key});
+
+  @override
+  State<MomCard> createState() => _MomCardState();
+}
+
+class _MomCardState extends State<MomCard> {
+  final EditStore store = Modular.get();
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width * .90,
+      height: MediaQuery.of(context).size.height * .45,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(30),
+        boxShadow: [
+          BoxShadow(
+              offset: const Offset(0, 10),
+              blurRadius: 8,
+              spreadRadius: 1.5,
+              color: Colors.black.withOpacity(.3))
+        ],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(35, 10, 35, 10),
+        child: Column(children: [
+          CepInputFb2(controller: store.controllerCEP),
+          PhoneInputFb2(controller: store.controllerPhone),
+          // PhoneInputFb2(controller: store.controllerSecPhone),
+
+          
+
+          
+        ]),
+      ),
+    );
+  }
+}

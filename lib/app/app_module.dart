@@ -9,6 +9,7 @@ import 'modules/initial/initial_module.dart';
 import 'modules/initial/initial_store.dart';
 import 'modules/profile/edit/edit_module.dart';
 import 'modules/profile/edit/edit_store.dart';
+import 'modules/profile/edit/photo_store.dart';
 import 'modules/profile/photo_album/photoAlbum_module.dart';
 import 'modules/profile/photo_album/photoAlbum_store.dart';
 import 'modules/profile/profile_module.dart';
@@ -35,6 +36,7 @@ class AppModule extends Module {
     Bind.lazySingleton((i) => VideoAlbumStore()),
     Bind.lazySingleton((i) => TasksStore()),
     Bind.lazySingleton((i) => ConteudoStore()),
+    Bind.lazySingleton((i) => PhotoStore()),
   ];
 
   @override

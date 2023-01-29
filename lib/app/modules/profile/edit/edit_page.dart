@@ -21,6 +21,7 @@ class EditPageState extends State<EditPage> {
     store.recoverDataFromFirebase();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,29 +43,29 @@ class EditPageState extends State<EditPage> {
               Expanded(
                 child: LayoutBuilder(builder: (_, constraints) {
                   return SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        const Photo(),
+                    child: Observer(builder: (_) {
+                      return Column(
+                        children: [
+                          const Photo(),
 
-                        KidCard(),
-
-                        
-
-                        // const MomCard(),
-                        Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: ElevatedButton(
-                            child: Text("Salvar"),
-                            onPressed: () {
-                              store.saveDataToFirebase();
-                              // store.recoverDataFromFirebase();
-                              // Modular.to.pushReplacementNamed("/nav/");
-                            },
-                            // GradientButtonFb1(text: 'AGE', onPressed: (){store.ageCalculator(); })
-                          ),
-                        )
-                      ],
-                    ),
+                          KidCard(),
+                          PhotoMom(),
+                          MomCard(),
+                          // const MomCard(),
+                          Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: ElevatedButton(
+                              child: Text("Salvar"),
+                              onPressed: () {
+                                store.saveDataToFirebase();
+                                store.searchCep();
+                              },
+                              // GradientButtonFb1(text: 'AGE', onPressed: (){store.ageCalculator(); })
+                            ),
+                          )
+                        ],
+                      );
+                    }),
                   );
                 }),
               )

@@ -8,6 +8,7 @@ import 'package:up/app/modules/profile/video_album/videoAlbum_store.dart';
 
 import 'edit/edit_page.dart';
 import 'edit/edit_store.dart';
+import 'edit/photo_store.dart';
 
 class ProfileModule extends Module {
   @override
@@ -16,6 +17,7 @@ class ProfileModule extends Module {
     Bind.lazySingleton((i) => EditStore()),
     Bind.lazySingleton((i) => PhotoAlbumStore()),
     Bind.lazySingleton((i) => VideoAlbumStore()),
+    Bind.lazySingleton((i) => PhotoStore()),
   ];
 
   @override

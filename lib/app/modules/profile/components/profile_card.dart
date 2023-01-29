@@ -4,11 +4,13 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../initial/auth/auth_store.dart';
 import '../edit/edit_store.dart';
+import '../edit/photo_store.dart';
 
 class ProfileCard extends StatelessWidget {
   ProfileCard({Key? key}) : super(key: key);
   final EditStore store = Modular.get();
   final AuthStore authStore = Modular.get();
+  final PhotoStore pStore = Modular.get();
 
   double borderRadius = 20;
 
@@ -109,7 +111,7 @@ class ProfileCard extends StatelessWidget {
                   return CircleAvatar(
                     radius: 45,
                     backgroundColor: Colors.black,
-                    // backgroundImage: NetworkImage(store.photoURL),
+                    backgroundImage: NetworkImage(pStore.photoURL),
                   );
                 }))
           ],
