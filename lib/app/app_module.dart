@@ -15,6 +15,8 @@ import 'modules/profile/profile_module.dart';
 import 'modules/profile/profile_store.dart';
 import 'modules/profile/video_album/videoAlbum_module.dart';
 import 'modules/profile/video_album/videoAlbum_store.dart';
+import 'modules/tasks/tasks_module.dart';
+import 'modules/tasks/tasks_store.dart';
 
 
 
@@ -29,6 +31,7 @@ class AppModule extends Module {
     Bind.lazySingleton((i) => EditStore()),
     Bind.lazySingleton((i) => PhotoAlbumStore()),
     Bind.lazySingleton((i) => VideoAlbumStore()),
+    Bind.lazySingleton((i) => TasksStore()),
   ];
 
   @override
@@ -41,6 +44,7 @@ class AppModule extends Module {
     ModuleRoute('/edit', module: EditModule()),
     ModuleRoute('/photo', module: PhotoAlbumModule()),
     ModuleRoute('/video', module: VideoAlbumModule()),
+    ModuleRoute('/tasks', module: TasksModule()),
   ];
 
 }

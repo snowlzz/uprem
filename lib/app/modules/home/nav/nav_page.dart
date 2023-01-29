@@ -7,6 +7,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../profile/profile_page.dart';
 
+import '../../tasks/tasks_page.dart';
 import '../home_page.dart';
 
 import 'nav_store.dart';
@@ -33,7 +34,7 @@ class _NavBarPageState extends State<NavBarPage> {
             children:  [
               HomePage(),
               ProfilePage(),
-              // TarefasPage(),
+              TasksPage(),
               // CrescimentoPage()
 
             ],

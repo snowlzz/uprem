@@ -35,8 +35,8 @@ abstract class _InitialStoreBase with Store {
   @action
   Future<void> signIn({String? email, String? pass}) async {
     loading = true;
-    User? usuarioLogado = _auth.currentUser!;
-    idLogado = usuarioLogado.uid;
+    // User? usuarioLogado = _auth.currentUser!;
+    idLogado = _auth.currentUser?.uid;
 
     email = controllerEmail.text;
     pass = controllerPass.text;
@@ -46,7 +46,8 @@ abstract class _InitialStoreBase with Store {
       user.pass = pass;
 
       await _auth.signInWithEmailAndPassword(email: email, password: pass).then((firebaseUser) async {
-        if(usuarioLogado == _auth.currentUser) loading = false;
+        // if(usuarioLogado == _auth.currentUser) loading = false;
+        loading = false;
         Modular.to.pushReplacementNamed('/nav/');
       });
 

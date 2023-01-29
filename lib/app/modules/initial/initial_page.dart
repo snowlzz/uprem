@@ -3,6 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:up/app/modules/initial/initial_store.dart';
 import 'package:flutter/material.dart';
 
+import '../profile/edit/edit_store.dart';
 import 'components/buttons.dart';
 import 'components/inputs.dart';
 
@@ -15,7 +16,7 @@ class InitialPage extends StatefulWidget {
 
 class InitialPageState extends State<InitialPage> {
   final InitialStore store = Modular.get();
-
+  final EditStore eStore = Modular.get();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
